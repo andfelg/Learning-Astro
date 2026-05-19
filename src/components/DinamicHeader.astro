@@ -1,0 +1,62 @@
+---
+import AppleIcon from '../assets/apple.svg'
+import BagIcon from '../assets/bag.svg'
+import MenuIcon from '../assets/menu.svg'
+---
+
+
+<header class="bg-black/70 backdrop-blur-md w-full flex items-center flex-col">
+    <section class="p-4 lg:w-[70%] w-[100%]">
+        <nav class="flex justify-between w-full">
+            <button class="md:hidden flex">
+                <MenuIcon></MenuIcon>
+            </button>
+            <a href="">
+                <AppleIcon></AppleIcon>
+            </a>
+            <nav class="hidden w-full md:flex justify-between items-center px-20">
+                <a href="">Mac</a>
+                <a href="">Ipad</a>
+                <a href="">Iphone</a>
+                <a href="">TV</a>
+                <a href="">Music</a>
+                <a href="">Support</a>
+            </nav>
+            <a href="">
+                <BagIcon></BagIcon>
+            </a>
+        </nav>
+    </section>
+</header>
+
+<section id="product-nav" class="p-3 w-full flex justify-center items-center bg-black/70 backdrop-blur-md border-b-[0.1vh] border-gray-700">
+    <div class="flex justify-between items-center lg:w-[70%] w-[100%]">
+        <h2 class="text-3xl font-bold">Iphone 14 Pro</h2>
+        <div>
+            <nav class="gap-6 flex items-center">
+                <a class="hidden md:flex" href="">Overview</a>
+                <a class="hidden md:flex" href="">Tech Specs</a>
+                <button class="p-1 pl-2 pr-2 bg-blue-500 rounded">Buy</button>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<script defer>
+    const productNav = document.getElementById('product-nav');
+
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        productNav.classList.add('sticky', 'top-0', 'left-0', 'z-50');
+      } if(window.scrollY > 65){
+        productNav.classList.add('fixed', 'top-0', 'left-0', 'z-50');
+        productNav.classList.remove('sticky');
+      } else {
+        productNav.classList.remove('fixed', 'top-0', 'left-0', 'z-50');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    handleScroll();
+</script>
