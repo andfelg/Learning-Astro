@@ -2,25 +2,30 @@
 import AppleIcon from '../assets/apple.svg'
 import BagIcon from '../assets/bag.svg'
 import MenuIcon from '../assets/menu.svg'
+import Menu from './Menu.astro'
 ---
 
+
+<Menu></Menu>
 
 <header class="bg-black/70 backdrop-blur-md w-full flex items-center flex-col">
     <section class="p-4 lg:w-[70%] w-[100%]">
         <nav class="flex justify-between w-full">
-            <button class="md:hidden flex">
+            <button class="md:hidden flex hover:cursor-pointer"
+                onclick="toggleMenu()"
+            >
                 <MenuIcon></MenuIcon>
             </button>
             <a href="">
                 <AppleIcon></AppleIcon>
             </a>
             <nav class="hidden w-full md:flex justify-between items-center px-20">
-                <a href="">Mac</a>
-                <a href="">Ipad</a>
-                <a href="">Iphone</a>
-                <a href="">TV</a>
-                <a href="">Music</a>
-                <a href="">Support</a>
+                <a class="hover:underline" href="">Mac</a>
+                <a class="hover:underline" href="">Ipad</a>
+                <a class="hover:underline" href="">Iphone</a>
+                <a class="hover:underline" href="">TV</a>
+                <a class="hover:underline" href="">Music</a>
+                <a class="hover:underline" href="">Support</a>
             </nav>
             <a href="">
                 <BagIcon></BagIcon>
@@ -29,13 +34,13 @@ import MenuIcon from '../assets/menu.svg'
     </section>
 </header>
 
-<section id="product-nav" class="p-3 w-full flex justify-center items-center bg-black/70 backdrop-blur-md border-b-[0.1vh] border-gray-700">
+<section id="product-nav" class="p-3 w-full flex justify-center items-center bg-black/70 backdrop-blur-md border-b-[0.1vh] border-gray-700 z-10">
     <div class="flex justify-between items-center lg:w-[70%] w-[100%]">
         <h2 class="text-3xl font-bold">Iphone 14 Pro</h2>
         <div>
             <nav class="gap-6 flex items-center">
-                <a class="hidden md:flex" href="">Overview</a>
-                <a class="hidden md:flex" href="">Tech Specs</a>
+                <a class="hidden md:flex hover:underline" href="">Overview</a>
+                <a class="hidden md:flex hover:underline" href="">Tech Specs</a>
                 <button class="p-1 pl-2 pr-2 bg-blue-500 rounded">Buy</button>
             </nav>
         </div>
@@ -44,6 +49,8 @@ import MenuIcon from '../assets/menu.svg'
 
 <script defer>
     const productNav = document.getElementById('product-nav');
+    let isOpen = false;
+    const menu = document.getElementById('menu');
 
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -59,4 +66,29 @@ import MenuIcon from '../assets/menu.svg'
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     handleScroll();
+
+    function toggleMenu(){
+        
+        isOpen = !isOpen;
+
+        if(isOpen){
+            menu.classList.add('visible')
+            menu.classList.remove('hidde')
+        } else {
+            menu.classList.add('hidde')
+            menu.classList.remove('visible')
+        }
+        
+    }
+
+    function hiddeMenu(){
+        if(isOpen){
+            isOpen = !isOpen;
+        }
+        
+        menu.classList.add('hidde')
+        menu.classList.remove('visible')
+        
+    }
+    
 </script>
