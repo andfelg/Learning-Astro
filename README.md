@@ -6,12 +6,12 @@ To begin learning astro i created a copy of an apple website interface
 
 ---
 
-![[screenshot1.png]]
+![desktop](./screenshots/screenshot1.png)
 
 ---
 Movile
 
-![[screenshot2.png]]
+![movile](./screenshots/screenshot2.png)
 
 ---
 
