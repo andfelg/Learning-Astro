@@ -9,7 +9,7 @@ To begin learning astro i created a copy of an apple website interface
 ![desktop](./screenshots/screenshot1.png)
 
 ---
-Movile
+Mobile
 
 ![movile](./screenshots/screenshot2.png)
 
@@ -34,8 +34,6 @@ Inside of your Astro project, you'll see the following folders and files:
 │       └── index.astro
 └── package.json
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## 🧞 Commands
 
